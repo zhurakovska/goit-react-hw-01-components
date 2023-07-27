@@ -1,21 +1,32 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
+import { StatisticsSection, StatisticsTitle, StatList, StatItem, StatLabel, StatPercentage} from './Statistics.styled'
 
 export const Statistics = ({stats, title}) => {
     const {id, label, percentage} = stats
 
   return (
     <>
-        <section className="statistics">
-            <h2 className="title">{title}</h2>
+        <StatisticsSection>
+            <StatisticsTitle>{title}</StatisticsTitle>
 
-            <ul className="stat-list">
+            <StatList>
                 {stats.map(el=> 
-                <li key={el.id} className="item">
-                    <span className="label">{el.label}</span>
-                    <span className="percentage">{el.percentage}</span>
-                </li>)}
-            </ul>
-</section>
+                <StatItem key={el.id} >
+                    <StatLabel>{el.label}</StatLabel>
+                    <StatPercentage>{el.percentage}%</StatPercentage>
+                </StatItem>)}
+            </StatList>
+        </StatisticsSection>
     </>
   )
+}
+
+Statistics.propTypes = {
+  data: PropTypes.shape({
+    id:  PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  })
 }

@@ -5,11 +5,11 @@ import {ListItem, AvatarImage, FriendName, Status} from './FriendList.styled';
 
 export const FriendListItem = ({friend}) => {
   return (
-        <ListItem> 
-            <Status $online = {friend.isOnline} ></Status>    
-            <AvatarImage src={friend.avatar} alt="User avatar" width="48" />
-            <FriendName>{friend.name}</FriendName>
-        </ListItem>
+    <ListItem> 
+        <Status $online = {friend.isOnline} ></Status>    
+        <AvatarImage src={friend.avatar} alt="User avatar" width="48" />
+        <FriendName>{friend.name}</FriendName>
+    </ListItem>
   )
 }
 

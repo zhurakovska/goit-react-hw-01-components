@@ -22,8 +22,6 @@ export const Statistics = ({stats, title}) => {
   )
 }
 
-
-
 Statistics.propTypes = {
   data: PropTypes.shape({
     id:  PropTypes.string.isRequired,

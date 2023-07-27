@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Container, Header, Cell } from './TransactionHistory.styled'
 
-
 export const TransactionHistory = (props) => {
-  
   return (
     <Container>
     <thead>

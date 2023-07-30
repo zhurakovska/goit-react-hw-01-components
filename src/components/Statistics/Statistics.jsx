@@ -6,7 +6,6 @@ import { StatisticsSection, StatisticsTitle, StatList, StatItem, StatLabel, Stat
 export const Statistics = ({stats, title}) => {
 
   return (
-    <>
       <StatisticsSection>
           <StatisticsTitle>{title}</StatisticsTitle>
 
@@ -18,14 +17,16 @@ export const Statistics = ({stats, title}) => {
               </StatItem>)}
           </StatList>
       </StatisticsSection>
-    </>
   )
 }
 
 Statistics.propTypes = {
-  data: PropTypes.shape({
-    id:  PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-  })
-}
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired
+    })
+  ).isRequired,
+  title: PropTypes.string.isRequired
+};

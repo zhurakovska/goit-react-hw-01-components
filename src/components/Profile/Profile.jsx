@@ -16,8 +16,7 @@ import {
 export const Profile = (props) => {
     const {username,tag,location,avatar,stats} = props.user
   return (
-    <>
-        <Container>
+      <Container>
         <div>
             <Img
             src={avatar}
@@ -42,8 +41,7 @@ export const Profile = (props) => {
               <StatQuantity>{stats.likes}</StatQuantity>
             </ListItem>
         </List>
-        </Container>
-    </>
+      </Container>
   )
 }
 
@@ -54,10 +52,10 @@ Profile.propTypes = {
       location: PropTypes.string.isRequired,
       avatar: PropTypes.string.isRequired,
 
-      stats:	PropTypes.shape({
+      stats: PropTypes.shape({
         followers: PropTypes.number.isRequired,
         views: PropTypes.number.isRequired,
         likes: PropTypes.number.isRequired,
       })
-		})
+		}).isRequired
 }
